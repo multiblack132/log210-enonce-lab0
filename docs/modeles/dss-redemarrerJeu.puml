@@ -1,1 +1,17 @@
-// Vous devez compléter ce fichier
+@startuml
+skinparam style strictuml
+skinparam defaultfontname Verdana
+skinparam sequence {
+    MessageAlign center
+}
+title DSS pour redémarrerJeu
+
+participant ":JeuDeDes" as jdd
+participant "joueurs:Map<String,Joueur>" as map
+
+-> jdd : redemarrerJeu()
+note over jdd : selon Contrôleur\n(JeuDeDés est\nl'objet racine)
+
+jdd -> map : clear()
+note over map : selon Expert
+@enduml
